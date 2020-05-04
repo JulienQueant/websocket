@@ -26,7 +26,6 @@
                 
                 mySocket.onopen = event => {
                     console.info('Websocket connection opened', event);
-
                     document.getElementsByName('chat-name')[0].disabled = true;
                     document.getElementsByClassName('chat-login')[0].disabled = true;
                 };
@@ -35,7 +34,7 @@
                     console.info('Message received', event);
 
                     let message = JSON.parse(event.data);
-                    let div = document.createElement("div");
+                    let div = document.createElement('div');
                     div.innerHTML = `[${message.user}] ${message.message}`;
                     document.getElementsByClassName('chat-content')[0].appendChild(div);
                 };
