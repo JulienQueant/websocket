@@ -27,6 +27,14 @@
                 mySocket.onopen = event => {
                     console.info('Websocket connection opened', event);
                 };
+
+                mySocket.onerror = error => {
+                    console.info('Websocket connection error');
+                };
+
+                mySocket.onclose = () => {
+                    console.info('Websocket connection closed');
+                };
             }
 
             function connectUser() {
@@ -46,5 +54,3 @@
         </script>
     </body>
 </html>
-
-;
